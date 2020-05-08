@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1296 1296" style="enable-background:new 0 0 1296 1296;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.5;}
+	.st1{clip-path:url(#SVGID_2_);fill:none;stroke:#9FF1FF;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<g class="st0">
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="20.85" y="20.85" width="1254.3" height="1254.3"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<line class="st1" x1="1274.65" y1="21.35" x2="21.35" y2="1274.65"/>
+		<line class="st1" x1="21.35" y1="21.35" x2="1274.65" y2="1274.65"/>
+		<line class="st1" x1="1193.87" y1="21.35" x2="1193.87" y2="1274.65"/>
+		<line class="st1" x1="885.44" y1="21.35" x2="885.44" y2="1274.65"/>
+		<line class="st1" x1="648" y1="21.35" x2="648" y2="1274.65"/>
+		<line class="st1" x1="410.56" y1="21.35" x2="410.56" y2="1274.65"/>
+		<line class="st1" x1="102.13" y1="21.35" x2="102.13" y2="1274.65"/>
+		<line class="st1" x1="21.35" y1="102.13" x2="1274.65" y2="102.13"/>
+		<line class="st1" x1="21.35" y1="410.56" x2="1274.65" y2="410.56"/>
+		<line class="st1" x1="21.35" y1="648" x2="1274.65" y2="648"/>
+		<line class="st1" x1="21.35" y1="885.44" x2="1274.65" y2="885.44"/>
+		<line class="st1" x1="21.35" y1="1193.87" x2="1274.65" y2="1193.87"/>
+		<circle class="st1" cx="648" cy="648" r="237.44"/>
+		
+			<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -268.411 647.9997)" class="st1" cx="648" cy="648" rx="335.35" ry="335.35"/>
+		<circle class="st1" cx="648" cy="648" r="545.87"/>
+	</g>
+</g>
+</svg>
