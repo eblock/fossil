@@ -5,8 +5,32 @@
   /* --big-type-color: #fa6718; */
 }
 
-img.fossil-by {
-  padding-bottom: 1.5rem;
+.fossil-by-wild-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 20vmin;
+  height: 36vmin;
+  top: 32vmin;
+}
+
+.fossil-by-wild-type .fossil {
+  color: #78662F;
+  font-family: "CCTV Medium";
+  letter-spacing: -0.666vmin;
+}
+.fossil-by-wild-type .by {
+  color: #78662F;
+  font-family: "Helvetica Neue";
+  letter-spacing: -0.666vmin;
+  margin-top: -5vmin;
+}
+.fossil-by-wild-type .wild-type {
+  color: #5E5E66;
+  font-family: 'Miu Regular';
+  letter-spacing: -0.166vmin;
 }
 
 .body {
@@ -14,6 +38,7 @@ img.fossil-by {
 }
 
 .body div {
+  background: white;
   mix-blend-mode: multiply;
 }
 
@@ -68,4 +93,14 @@ img.fossil-by {
   src: url('../fonts/ITCFranklinPro/FranklinNrrwITCPro-Med.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'CCTV Medium';
+  src: url('../fonts/CCTV_Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Miu Regular';
+  src: url('../fonts/Miu-Regular.otf') format('opentype');
 }
