@@ -21,6 +21,10 @@ img.fossil-by {
   /* filter: blur(3px); */
 }
 
+.credits {
+  font-family: 'ITC Franklin Gothic Narrow';
+}
+
 .reverse-scroll {
   position: fixed;
   margin: 0;
@@ -57,4 +61,11 @@ img.fossil-by {
   100% {
     transform: translate(6px, -6px);
   }
+}
+
+@font-face {
+  font-family: 'ITC Franklin Gothic Narrow';
+  src: url('../fonts/ITCFranklinPro/FranklinNrrwITCPro-Med.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
 }
