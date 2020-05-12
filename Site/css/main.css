@@ -1,0 +1,60 @@
+:root {
+  --credit-color: #00b7ff;
+  --big-type-color: #c4bcd2;
+  /* --credit-color: #2a39df; */
+  /* --big-type-color: #fa6718; */
+}
+
+img.fossil-by {
+  padding-bottom: 1.5rem;
+}
+
+.body {
+  margin: 0;
+}
+
+.body div {
+  mix-blend-mode: multiply;
+}
+
+.big-type {
+  /* filter: blur(3px); */
+}
+
+.reverse-scroll {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.panel {
+  width: 100%;
+}
+
+.outline div {
+  /* animation: bounce 5s infinite; */
+  -webkit-text-stroke: 1px var(--big-type-color);
+  color: rgba(0, 0, 0, 0);
+  opacity: .5;
+}
+
+.off {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate(6px, -6px);
+  }
+  50% {
+    transform: translate(-6px, 6px);
+  }
+  100% {
+    transform: translate(6px, -6px);
+  }
+}
