@@ -1,16 +1,17 @@
 // -------------TODO-------------
-// (p0) GitHub repo alignment, upload
-// (p0) update fonts, lockup, assets
-// (p0) reverse scroll hiccup
+// (p0) Clean up comments/code
+// (p0) Fix reverse scroll hiccup
+// (p0) QA Resize function
 
-// (p1) Big Type outline / treatment
-//      responsive to mouse pos ??
+// (p1) Color rectangle, match sketch
+// (p1) Outline as separate div with blend mode
+//      -- responsive to mouse pos ?
 // (p1) Color change on hover
-//      Use CSS variables
+//      -- Use CSS variables
 
 // (p2) Animated Type
 // (p2) Mirrored type
-// (p2) Hover to show object/image
+// (p2) Hover to reveal images
 
 // (p3) Type on a rounded rectangular path
 // ------------------------------
@@ -63,13 +64,13 @@ window.addEventListener('resize', (event) => {
 // SCROLLING FEATURES
 $(window).on('scroll', () => {
   // Reverse Looping Scroll
-  // $(".reverse-scroll").css('bottom', $(window).scrollTop() * -1 + $('.credits').innerHeight());
   $(".reverse-scroll").css('transform', `translateY(${$(window).scrollTop() * reverseScrollRate - 1.05 * panelHeight}px)`);
 
   // Credits Looping Scroll
   const scrolled = winHeight + window.scrollY;
   const documentHeight = document.body.offsetHeight;
-  const offset = 0.05*winHeight; // distance from bottom before the page resets to top
+  const offset = 0.05*winHeight;
+    // distance from bottom before the page resets to top
 
   if (scrolled - offset >= $('.credits').innerHeight() + documentHeight) {
     window.scrollTo(0, 1);
@@ -78,7 +79,7 @@ $(window).on('scroll', () => {
   }
 });
 
-// ambientScroll();
+ambientScroll();
 function ambientScroll() {
   window.scrollBy(0, 1);
   scrolldelay = setTimeout(ambientScroll, 40);
@@ -100,5 +101,5 @@ $(document).on("mousemove", (event) => {
 
   // console.log(event.pageY - window.scrollY);
   // console.log("mouseX: " + mouseX + ", mouseY: " + mouseY);
-  $('.outline').css('transform', `translate(${outlineX}px, ${outlineY}px)`);
+  // $('.outline').css('transform', `translate(${outlineX}px, ${outlineY}px)`);
 });
