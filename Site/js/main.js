@@ -16,16 +16,31 @@
 // (p3) Type on a rounded rectangular path
 // ------------------------------
 
-let winHeight = $(window).innerHeight(),
-    winWidth = $(window).innerWidth(),
-    panelHeight = $(".panel").innerHeight(),
-    creditsHeight = $(".credits").innerHeight(),
+let winHeight,
+    winWidth,
+    panelHeight,
+    creditsHeight,
     reverseScrollRate;
 
-$(document).ready(() => {
+let scrolled;
+let documentHeight;
+let offset;
+
+function initialize() {
+  winHeight = $(window).innerHeight();
+  winWidth = $(window).innerWidth();
+  panelHeight = $(".panel").innerHeight();
+  creditsHeight = $(".credits").innerHeight();
+  reverseScrollRate =  panelHeight / creditsHeight * .99;
+
+  // Set height of body and big type 
+  $("body").height(winHeight * $(".panel").length);
   $(".big-type").height(winHeight);
   // $(".outline-offset").height(winHeight);
-  $("body").height(winHeight * $(".panel").length);
+}
+
+$(document).ready(() => {
+  initialize();
 
   // Clone the Credits
   $('.credits').clone().appendTo('.credits-container');
@@ -33,50 +48,50 @@ $(document).ready(() => {
   // Clone the Big Type
   $('.panel').clone().appendTo('.big-type');
 
-  // TranslateY big type
-  $(".reverse-scroll").css('transform', `translateY(${ - 1.05 * panelHeight}px)`);
-
-  // Calculate reverse scroll rate
-  reverseScrollRate =  panelHeight / creditsHeight;
+  // Translate Big type
+  $(".reverse-scroll").css('transform', `translateY(${-panelHeight}px)`);
 });
 
 // *** NEEDS ATTENTION ***
-window.addEventListener('resize', (event) => {
-  // *** INSERT RESET SCROLL FUNCTION? ***
+$(window).on('resize', event => {
+  initialize();
+  // console.log(window.scrollY);
+  // console.log(winHeight);
 
-  // Reloads site *** temporary fix
-  window.location.reload(false);
+  // *** RESET SCROLL FUNCTION? ***
+  // setTimeout(() => {
+  //   window.scrollTo(0, 1);
+  //   $(".reverse-scroll").css('transform', `translateY(${-panelHeight}px)`);
+  // }, 10);
 
-  winHeight = $(window).innerHeight();
-  winWidth = $(window).innerWidth();
-  panelHeight = $(".panel").innerHeight();
-  creditsHeight = $(".credits").innerHeight();
-  reverseScrollRate = panelHeight / creditsHeight;
+  // Reloads site (temporary fix)
+  // window.location.reload(false);
 
-  $(".big-type").height(winHeight);
-  // $(".outline-offset").height($(window).innerHeight());
-  $("body").height(winHeight * $(".panel").length);
+  // $(window).trigger('scroll');
 
-  // window.scrollTo(0, 1);
-  // $(".reverse-scroll").css('transform', `translateY(${ - 1.05 * panelHeight}px)`);
 });
 
 // SCROLLING FEATURES
 $(window).on('scroll', () => {
   // Reverse Looping Scroll
-  $(".reverse-scroll").css('transform', `translateY(${$(window).scrollTop() * reverseScrollRate - 1.05 * panelHeight}px)`);
+  $(".reverse-scroll").css('transform', `translateY(${window.scrollY * reverseScrollRate - panelHeight}px)`);
 
   // Credits Looping Scroll
-  const scrolled = winHeight + window.scrollY;
-  const documentHeight = document.body.offsetHeight;
-  const offset = 0.05*winHeight;
+  scrolled = winHeight + window.scrollY;
+  documentHeight = winHeight; // document.body.offsetHeight;
+  offset = 0.05*winHeight;
     // distance from bottom before the page resets to top
 
-  if (scrolled - offset >= $('.credits').innerHeight() + documentHeight) {
+  if (scrolled - offset >= creditsHeight + documentHeight) {
     window.scrollTo(0, 1);
   } else if (scrolled <= documentHeight) {
-    window.scrollTo(0, $('.credits').innerHeight() + offset);
+    window.scrollTo(0, creditsHeight + offset);
   }
+
+  // console.log('scroll =', window.scrollY);
+  // console.log('scroll triggered');
+  // console.log('doc:', documentHeight, 'winH', winHeight, 'scroll', window.scrollY);
+
 });
 
 // ambientScroll();
