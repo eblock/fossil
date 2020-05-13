@@ -1,0 +1,144 @@
+:root {
+  --credit-color: #00b7ff;
+  --big-type-color: #c4bcd2;
+  --fossil-color: #78662F;
+  --wild-color: #5E5E66;
+
+  /* --credit-color: #2a39df; */
+  /* --big-type-color: #fa6718; */
+}
+
+.fossil-by-wild-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 20vmin;
+  height: 36vmin;
+  top: 32vmin;
+
+  color: rgba(0, 0, 0, 0);
+  transform: translate(-3px, -3px);
+}
+
+.fossil-by-wild-type .fossil {
+  font-family: "CCTV Medium";
+  letter-spacing: -0.666vmin;
+
+  text-shadow: 3px 3px 0 var(--fossil-color);
+  -webkit-text-stroke: 1px var(--fossil-color);
+}
+
+.fossil-by-wild-type .by {
+  font-family: "Helvetica Neue";
+  letter-spacing: -0.666vmin;
+  margin-top: -5vmin;
+
+  text-shadow: 3px 3px 0 var(--fossil-color);
+  -webkit-text-stroke: 1px var(--fossil-color);
+}
+
+.fossil-by-wild-type .wild-type {
+  font-family: 'Miu Regular';
+  letter-spacing: -0.166vmin;
+
+  text-shadow: 3px 3px 0 var(--wild-color);
+  -webkit-text-stroke: 1px var(--wild-color);
+}
+
+.body {
+  margin: 0;
+}
+
+.body div {
+  background: white;
+  mix-blend-mode: multiply;
+}
+
+.big-type div {
+  color: rgba(0, 0, 0, 0);
+  font-family: 'Displace 2.0';
+  transform: translate(-3px, 3px);
+  text-shadow: 3px -3px 0 var(--big-type-color);
+  -webkit-text-stroke: 1px var(--big-type-color);
+}
+
+.credits {
+  font-family: 'ITC Franklin Gothic Narrow';
+}
+
+.grid-container {
+  z-index: 0;
+  pointer-events: none;
+}
+
+.grid-container img {
+  height: 100vh;
+  width: 222vmin;
+  max-height: 100vh;
+  max-width: 222vmin;
+  object-fit: cover;
+}
+
+.reverse-scroll {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.panel {
+  width: 100%;
+}
+
+.outline div {
+  /* animation: bounce 5s infinite; */
+  -webkit-text-stroke: 1px var(--big-type-color);
+  color: rgba(0, 0, 0, 0);
+  opacity: .5;
+}
+
+.off {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate(6px, -6px);
+  }
+  50% {
+    transform: translate(-6px, 6px);
+  }
+  100% {
+    transform: translate(6px, -6px);
+  }
+}
+
+@font-face {
+  font-family: 'ITC Franklin Gothic Narrow';
+  src: url('../fonts/ITCFranklinPro/FranklinNrrwITCPro-Med.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CCTV Medium';
+  src: url('../fonts/CCTV_Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Miu Regular';
+  src: url('../fonts/Miu-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Displace 2.0';
+  src: url('../fonts/Serebryakov---Displace-2.0-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
