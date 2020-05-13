@@ -68,6 +68,19 @@
   font-family: 'ITC Franklin Gothic Narrow';
 }
 
+.grid-container {
+  z-index: 0;
+  pointer-events: none;
+}
+
+.grid-container img {
+  height: 100vh;
+  width: 222vmin;
+  max-height: 100vh;
+  max-width: 222vmin;
+  object-fit: cover;
+}
+
 .reverse-scroll {
   position: fixed;
   margin: 0;

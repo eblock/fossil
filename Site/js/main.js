@@ -79,7 +79,7 @@ $(window).on('scroll', () => {
   }
 });
 
-ambientScroll();
+// ambientScroll();
 function ambientScroll() {
   window.scrollBy(0, 1);
   scrolldelay = setTimeout(ambientScroll, 30);
