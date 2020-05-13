@@ -82,13 +82,13 @@ $(window).on('scroll', () => {
 ambientScroll();
 function ambientScroll() {
   window.scrollBy(0, 1);
-  scrolldelay = setTimeout(ambientScroll, 40);
+  scrolldelay = setTimeout(ambientScroll, 30);
 }
 
 // MOUSE-REACTIVE FEATURES
 let outlineX = 0;
 let outlineY = 0;
-let outlineDist = 20;
+let outlineDist = 15;
 
 $(document).on("mousemove", (event) => {
   let mouseX = 0.5 - (event.pageX / winWidth);
@@ -102,4 +102,20 @@ $(document).on("mousemove", (event) => {
   // console.log(event.pageY - window.scrollY);
   // console.log("mouseX: " + mouseX + ", mouseY: " + mouseY);
   // $('.outline').css('transform', `translate(${outlineX}px, ${outlineY}px)`);
+  
+  // // BIG-TYPE SHADOW
+  // $('.big-type div').css('text-shadow', `
+  // ${outlineX}px ${outlineY}px 0 var(--big-type-color)`);
+
+  // LOGO OUTLINE
+  $('.fossil-by-wild-type .fossil').css('transform', `translate(${outlineX}px, ${outlineY}px)`);
+  $('.fossil-by-wild-type .by').css('transform', `translate(${outlineX}px, ${outlineY}px)`);
+  $('.fossil-by-wild-type .wild-type').css('transform', `translate(${outlineX}px, ${outlineY}px)`);
+
+  $('.fossil-by-wild-type .fossil').css('text-shadow', `
+  ${-1*outlineX}px ${-1*outlineY}px 0 var(--fossil-color)`);
+  $('.fossil-by-wild-type .by').css('text-shadow', `
+  ${-1*outlineX}px ${-1*outlineY}px 0 var(--fossil-color)`);
+  $('.fossil-by-wild-type .wild-type').css('text-shadow', `
+  ${-1*outlineX}px ${-1*outlineY}px 0 var(--wild-color)`);
 });
