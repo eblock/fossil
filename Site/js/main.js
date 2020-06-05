@@ -46,7 +46,8 @@ $(document).ready(() => {
   // Translate Big type
   $(".reverse-scroll").css('transform', `translateY(${-panelHeight}px)`);
   
-  ambientScroll();
+  // Ambient Scrolling
+  // ambientScroll();
 });
 
 // RESIZE HANDLER
