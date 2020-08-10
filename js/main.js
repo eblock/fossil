@@ -74,8 +74,10 @@ $(window).on('scroll', () => {
 
   if (scrolled - offset >= creditsHeight + winHeight) {
     window.scrollTo(0, 1);
+    nextStill();
   } else if (scrolled <= winHeight) {
     window.scrollTo(0, creditsHeight + offset);
+    prevStill();
   }
 });
 
@@ -118,3 +120,22 @@ $(document).on("mousemove", (event) => {
   $('.fossil-by-wild-type .wild-type').css('text-shadow', `
   ${-1*outlineX}px ${-1*outlineY}px 0 var(--wild-color)`);
 });
+
+// STILL VIEW HANDLERS
+let stillImg = document.querySelector('.still img');
+let stillNum = 1;
+let stillMax = 4;
+
+function nextStill() {
+  if (stillNum < 4) stillNum++;
+  else stillNum = 1;
+
+  stillImg.src = `images/stills/Fossil-View-${stillNum}-Portfolio-Edit.png`;
+}
+
+function prevStill() {
+  if (stillNum > 1) stillNum--;
+  else stillNum = 4;
+  
+  stillImg.src = `images/stills/Fossil-View-${stillNum}-Portfolio-Edit.png`;
+}

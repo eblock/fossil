@@ -57,6 +57,22 @@
   mix-blend-mode: multiply; */
 }
 
+.still {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: -5;
+}
+
+.still img {
+  height: 100%;
+}
+
 .big-type div {
   color: rgba(0, 0, 0, 0);
   font-family: 'Displace 2.0';
