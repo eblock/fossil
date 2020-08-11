@@ -21,6 +21,11 @@ let winHeight,
     creditsHeight,
     reverseScrollRate;
 
+let stillImg = document.querySelector('.still img');
+let stillNum = 1;
+let stillMax = 4;
+let isScrolling;
+
 function initialize() {
   winHeight = $(window).innerHeight();
   winWidth = $(window).innerWidth();
@@ -64,19 +69,33 @@ $(window).on('resize', event => {
 
 // SCROLLING FEATURES
 $(window).on('scroll', () => {
+  window.clearTimeout(isScrolling);
+
   // Reverse Looping Scroll
   $(".reverse-scroll").css('transform', `translateY(${window.scrollY * reverseScrollRate - panelHeight}px)`);
 
   // Credits Looping Scroll
   let scrolled = winHeight + window.scrollY;
   let offset = 0.05*winHeight;
-    // distance from bottom before the page resets to top
-
+  // distance from bottom before the page resets to top
+  
   if (scrolled - offset >= creditsHeight + winHeight) {
     window.scrollTo(0, 1);
+    nextStill();
   } else if (scrolled <= winHeight) {
     window.scrollTo(0, creditsHeight + offset);
+    prevStill();
   }
+
+  // Change opacity of still
+  stillImg.style.opacity = "1.0";
+
+  // Once scrolling stops
+  isScrolling = setTimeout(() => {
+    isScrolling = 0;
+    stillImg.style.opacity = "0.0";
+  }, 120);
+
 });
 
 function ambientScroll() {
@@ -118,3 +137,18 @@ $(document).on("mousemove", (event) => {
   $('.fossil-by-wild-type .wild-type').css('text-shadow', `
   ${-1*outlineX}px ${-1*outlineY}px 0 var(--wild-color)`);
 });
+
+// STILL VIEW HANDLERS
+function nextStill() {
+  if (stillNum < 4) stillNum++;
+  else stillNum = 1;
+
+  stillImg.src = `images/stills/Fossil-View-${stillNum}-Portfolio-Edit.png`;
+}
+
+function prevStill() {
+  if (stillNum > 1) stillNum--;
+  else stillNum = 4;
+  
+  stillImg.src = `images/stills/Fossil-View-${stillNum}-Portfolio-Edit.png`;
+}
