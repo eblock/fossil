@@ -52,11 +52,6 @@
   margin: 0;
 }
 
-.body div {
-  /* background: white;
-  mix-blend-mode: multiply; */
-}
-
 .still {
   align-items: center;
   display: flex;
@@ -66,11 +61,13 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: -5;
+  z-index: 1;
 }
 
 .still img {
   height: 100%;
+  opacity: 0.0;
+  transition: opacity .25s ease-in-out;
 }
 
 .big-type div {

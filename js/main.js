@@ -21,6 +21,11 @@ let winHeight,
     creditsHeight,
     reverseScrollRate;
 
+let stillImg = document.querySelector('.still img');
+let stillNum = 1;
+let stillMax = 4;
+let isScrolling;
+
 function initialize() {
   winHeight = $(window).innerHeight();
   winWidth = $(window).innerWidth();
@@ -64,14 +69,16 @@ $(window).on('resize', event => {
 
 // SCROLLING FEATURES
 $(window).on('scroll', () => {
+  window.clearTimeout(isScrolling);
+
   // Reverse Looping Scroll
   $(".reverse-scroll").css('transform', `translateY(${window.scrollY * reverseScrollRate - panelHeight}px)`);
 
   // Credits Looping Scroll
   let scrolled = winHeight + window.scrollY;
   let offset = 0.05*winHeight;
-    // distance from bottom before the page resets to top
-
+  // distance from bottom before the page resets to top
+  
   if (scrolled - offset >= creditsHeight + winHeight) {
     window.scrollTo(0, 1);
     nextStill();
@@ -79,6 +86,16 @@ $(window).on('scroll', () => {
     window.scrollTo(0, creditsHeight + offset);
     prevStill();
   }
+
+  // Change opacity of still
+  stillImg.style.opacity = "1.0";
+
+  // Once scrolling stops
+  isScrolling = setTimeout(() => {
+    isScrolling = 0;
+    stillImg.style.opacity = "0.0";
+  }, 120);
+
 });
 
 function ambientScroll() {
@@ -122,10 +139,6 @@ $(document).on("mousemove", (event) => {
 });
 
 // STILL VIEW HANDLERS
-let stillImg = document.querySelector('.still img');
-let stillNum = 1;
-let stillMax = 4;
-
 function nextStill() {
   if (stillNum < 4) stillNum++;
   else stillNum = 1;
