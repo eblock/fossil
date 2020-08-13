@@ -19,7 +19,7 @@
   top: 32vmin;
 
   color: rgba(0, 0, 0, 0);
-  transform: translate(-3px, -3px);
+  transform: translate(-3px, 3px);
   mix-blend-mode: multiply;
 }
 
@@ -27,7 +27,7 @@
   font-family: "CCTV Medium";
   letter-spacing: -0.666vmin;
 
-  text-shadow: 3px 3px 0 var(--fossil-color);
+  text-shadow: 3px -3px 0 var(--fossil-color);
   -webkit-text-stroke: 1px var(--fossil-color);
 }
 
@@ -36,7 +36,7 @@
   letter-spacing: -0.666vmin;
   margin-top: -5vmin;
 
-  text-shadow: 3px 3px 0 var(--fossil-color);
+  text-shadow: 3px -3px 0 var(--fossil-color);
   -webkit-text-stroke: 1px var(--fossil-color);
 }
 
@@ -44,7 +44,7 @@
   font-family: 'Miu Regular';
   letter-spacing: -0.166vmin;
 
-  text-shadow: 3px 3px 0 var(--wild-color);
+  text-shadow: 3px -3px 0 var(--wild-color);
   -webkit-text-stroke: 1px var(--wild-color);
 }
 
@@ -76,6 +76,13 @@
   transform: translate(-3px, 3px);
   text-shadow: 3px -3px 0 var(--big-type-color);
   -webkit-text-stroke: 1px var(--big-type-color);
+ 
+  /* color: var(--big-type-color);
+  font-family: 'Displace 2.0'; */
+}
+
+.big-type .f37-large {
+  font-family: 'F37 Jan', sans-serif;
 }
 
 .big-type-container {
@@ -152,6 +159,11 @@
 @font-face {
   font-family: 'Miu Regular';
   src: url('../fonts/Miu-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'F37 Jan';
+  src: url('../fonts/F37Jan-Thin.otf') format('opentype');
 }
 
 @font-face {

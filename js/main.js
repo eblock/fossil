@@ -125,6 +125,10 @@ $(document).on("mousemove", (event) => {
   // $('.big-type div').css('text-shadow', `
   // ${outlineX}px ${outlineY}px 0 var(--big-type-color)`);
 
+  $('.big-type .panel div').css('transform', `translate(${outlineX}px, ${outlineY}px)`);
+  $('.big-type .panel div').css('text-shadow', `
+  ${-1*outlineX}px ${-1*outlineY}px 0 var(--big-type-color)`);
+
   // LOGO OUTLINE
   $('.fossil-by-wild-type .fossil').css('transform', `translate(${outlineX}px, ${outlineY}px)`);
   $('.fossil-by-wild-type .by').css('transform', `translate(${outlineX}px, ${outlineY}px)`);
