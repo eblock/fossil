@@ -18,11 +18,15 @@
   justify-content: space-between;
   align-items: center;
 
-  font-size: 20vmin;
-  height: 36vmin;
+  /* with +/+ */
+  font-size: 18vmin;
+  height: 48vmin;
   margin: auto;
-  /* top: 32vh; */
 
+  /* without +/+ */
+  /* font-size: 20vmin;
+  height: 36vmin;
+  margin: auto; */
   color: rgba(0, 0, 0, 0);
   transform: translate(-2px, 2px);
   mix-blend-mode: multiply;
@@ -45,7 +49,8 @@
   -webkit-text-stroke: 1px var(--fossil-stroke);
 }
 
-.fossil-by-wild-type .wild-type {
+.fossil-by-wild-type .wild-type,
+.fossil-by-wild-type .plus {
   font-family: 'Miu Regular';
   letter-spacing: -0.166vmin;
 
