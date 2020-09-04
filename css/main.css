@@ -20,7 +20,8 @@
 
   font-size: 20vmin;
   height: 36vmin;
-  top: 32vmin;
+  margin: auto;
+  /* top: 32vh; */
 
   color: rgba(0, 0, 0, 0);
   transform: translate(-2px, 2px);
@@ -64,6 +65,7 @@
   pointer-events: none;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100vw;
   z-index: 1;
 }
