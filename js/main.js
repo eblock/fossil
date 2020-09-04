@@ -147,12 +147,12 @@ function nextStill() {
   if (stillNum < 4) stillNum++;
   else stillNum = 1;
 
-  stillImg.src = `images/stills/Fossil-View-${stillNum}-Portfolio-Edit.png`;
+  stillImg.src = `images/stills/Fossil-View-${stillNum}-No-Background-Edit.png`;
 }
 
 function prevStill() {
   if (stillNum > 1) stillNum--;
   else stillNum = 4;
   
-  stillImg.src = `images/stills/Fossil-View-${stillNum}-Portfolio-Edit.png`;
+  stillImg.src = `images/stills/Fossil-View-${stillNum}-No-Background-Edit.png`;
 }
