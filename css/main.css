@@ -13,6 +13,7 @@
 }
 
 .fossil-by-wild-type {
+  pointer-events: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -97,10 +98,12 @@
 }
 
 .big-type-container {
+  pointer-events: none;
   mix-blend-mode: multiply;
 }
 
 .credits {
+  position: relative;
   font-family: 'ITC Franklin Gothic Narrow';
 }
 
@@ -137,6 +140,19 @@
 
 .off {
   display: none;
+}
+
+/* light mirrored text */
+.two-column-light-backface div.lowercase,
+.two-column-light-backface div.capitalized,
+.title-section-light-backface div.lowercase,
+.title-section-light-backface div.capitalized {
+  color: #dff7ff !important;
+}
+
+.div-block-2 {
+  pointer-events: none;
+  z-index: -1;
 }
 
 ::-webkit-scrollbar {

@@ -30,8 +30,8 @@ function initialize() {
   winHeight = $(window).innerHeight();
   winWidth = $(window).innerWidth();
   panelHeight = $(".panel").innerHeight();
-  creditsHeight = $(".credits").innerHeight();
-  reverseScrollRate =  panelHeight / creditsHeight * .99;
+  creditsHeight = $(".dark-blue").innerHeight();
+  reverseScrollRate =  panelHeight / creditsHeight * .999;
 
   // Set height of body and big type 
   $("body").height(winHeight * $(".panel").length);
@@ -43,7 +43,7 @@ $(document).ready(() => {
   initialize();
 
   // Clone the Credits
-  $('.credits').clone().appendTo('.credits-container');
+  $('.credits').clone().appendTo('.credits-container').css('transform', `translateY(${creditsHeight}px)`);
 
   // Clone the Big Type
   $('.panel').clone().appendTo('.big-type');
@@ -76,7 +76,7 @@ $(window).on('scroll', () => {
 
   // Credits Looping Scroll
   let scrolled = winHeight + window.scrollY;
-  let offset = 0.05*winHeight;
+  let offset = 0.001*winHeight;
   // distance from bottom before the page resets to top
   
   if (scrolled - offset >= creditsHeight + winHeight) {
