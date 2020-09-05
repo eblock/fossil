@@ -13,16 +13,21 @@
 }
 
 .fossil-by-wild-type {
+  pointer-events: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
-  font-size: 20vmin;
-  height: 36vmin;
+  /* with +/+ */
+  font-size: 18vmin;
+  height: 48vmin;
   margin: auto;
-  /* top: 32vh; */
 
+  /* without +/+ */
+  /* font-size: 20vmin;
+  height: 36vmin;
+  margin: auto; */
   color: rgba(0, 0, 0, 0);
   transform: translate(-2px, 2px);
   mix-blend-mode: multiply;
@@ -45,7 +50,8 @@
   -webkit-text-stroke: 1px var(--fossil-stroke);
 }
 
-.fossil-by-wild-type .wild-type {
+.fossil-by-wild-type .wild-type,
+.fossil-by-wild-type .plus {
   font-family: 'Miu Regular';
   letter-spacing: -0.166vmin;
 
@@ -92,10 +98,12 @@
 }
 
 .big-type-container {
+  pointer-events: none;
   mix-blend-mode: multiply;
 }
 
 .credits {
+  position: relative;
   font-family: 'ITC Franklin Gothic Narrow';
 }
 
@@ -132,6 +140,19 @@
 
 .off {
   display: none;
+}
+
+/* light mirrored text */
+.two-column-light-backface div.lowercase,
+.two-column-light-backface div.capitalized,
+.title-section-light-backface div.lowercase,
+.title-section-light-backface div.capitalized {
+  color: #dff7ff !important;
+}
+
+.div-block-2 {
+  pointer-events: none;
+  z-index: -1;
 }
 
 ::-webkit-scrollbar {
