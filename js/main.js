@@ -1,20 +1,3 @@
-// -------------TODO-------------
-// (p0) Clean up comments/code
-
-// (p1) Color rectangle, match sketch
-// (p1) Outline as separate div with blend mode
-//      -- responsive to mouse pos ?
-// (p1) Color change on hover
-//      -- Use CSS variables
-// (p1) Add a fade-in transition on load
-
-// (p2) Animated Type
-// (p2) Mirrored type
-// (p2) Hover to reveal images
-
-// (p3) Type on a rounded rectangular path
-// ------------------------------
-
 let winHeight,
     winWidth,
     panelHeight,
@@ -36,7 +19,6 @@ function initialize() {
   // Set height of body and big type 
   $("body").height(winHeight * $(".panel").length);
   $(".big-type").height(winHeight);
-  // $(".outline-offset").height(winHeight);
 }
 
 $(document).ready(() => {
@@ -53,18 +35,6 @@ $(document).ready(() => {
   
   // Ambient Scrolling
   // ambientScroll();
-});
-
-// RESIZE HANDLER
-$(window).on('resize', event => {
-  initialize();
-
-  // Reloads site (temporary fix)
-  // window.location.reload(false);
-
-  $(window).trigger('scroll');
-    // may be redundant
-
 });
 
 // SCROLLING FEATURES
@@ -121,10 +91,7 @@ $(document).on("mousemove", (event) => {
   // console.log("mouseX: " + mouseX + ", mouseY: " + mouseY);
   // $('.outline').css('transform', `translate(${outlineX}px, ${outlineY}px)`);
   
-  // // BIG-TYPE SHADOW
-  // $('.big-type div').css('text-shadow', `
-  // ${outlineX}px ${outlineY}px 0 var(--big-type-color)`);
-
+  // BIG-TYPE SHADOW
   $('.big-type .panel div').css('transform', `translate(${outlineX}px, ${outlineY}px)`);
   $('.big-type .panel div').css('text-shadow', `
   ${-1*outlineX}px ${-1*outlineY}px 0 var(--big-type-color)`);
