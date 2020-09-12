@@ -92,7 +92,6 @@
 
 .big-type-container {
   pointer-events: none;
-  mix-blend-mode: multiply;
 }
 
 .credits {
@@ -124,13 +123,6 @@
   width: 100%;
 }
 
-.outline div {
-  /* animation: bounce 5s infinite; */
-  -webkit-text-stroke: 1px var(--big-type-stroke);
-  color: rgba(0, 0, 0, 0);
-  opacity: .5;
-}
-
 .off {
   display: none;
 }
@@ -150,6 +142,34 @@
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+/* Mobile Queries */
+@media screen and (max-width: 479px) {
+  .big-type-container {
+    mix-blend-mode: multiply;
+  }
+
+  .big-type div {
+    -webkit-text-stroke: .6px var(--big-type-stroke);
+  }
+
+  .fossil-by-wild-type {
+    font-size: 20vmin;
+    height: 40vmin;
+  }
+  .fossil-by-wild-type .fossil {
+    -webkit-text-stroke: .6px var(--fossil-stroke);
+  }
+  
+  .fossil-by-wild-type .by {
+    -webkit-text-stroke: .6px var(--fossil-stroke);
+  }
+  
+  .fossil-by-wild-type .wild-type,
+  .fossil-by-wild-type .plus {
+    -webkit-text-stroke: .6px var(--wild-stroke);
+  }
 }
 
 @keyframes bounce {
