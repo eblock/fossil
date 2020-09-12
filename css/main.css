@@ -18,16 +18,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
-  /* with +/+ */
-  font-size: 18vmin;
-  height: 48vmin;
-  margin: auto;
-
-  /* without +/+ */
-  /* font-size: 20vmin;
+  font-size: 20vmin;
   height: 36vmin;
-  margin: auto; */
+  margin: auto;
   color: rgba(0, 0, 0, 0);
   transform: translate(-2px, 2px);
   mix-blend-mode: multiply;

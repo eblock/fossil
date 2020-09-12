@@ -81,10 +81,10 @@ $(window).on('scroll', () => {
   
   if (scrolled - offset >= creditsHeight + winHeight) {
     window.scrollTo(0, 1);
-    nextStill();
+    // nextStill();
   } else if (scrolled <= winHeight) {
     window.scrollTo(0, creditsHeight + offset);
-    prevStill();
+    // prevStill();
   }
 
   // Change opacity of still
