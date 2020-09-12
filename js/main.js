@@ -87,10 +87,6 @@ $(document).on("mousemove", (event) => {
   if (outlineY < outlineDist * mouseY) outlineY++;
   if (outlineY > outlineDist * mouseY) outlineY--;
 
-  // console.log(event.pageY - window.scrollY);
-  // console.log("mouseX: " + mouseX + ", mouseY: " + mouseY);
-  // $('.outline').css('transform', `translate(${outlineX}px, ${outlineY}px)`);
-  
   // BIG-TYPE SHADOW
   $('.big-type .panel div').css('transform', `translate(${outlineX}px, ${outlineY}px)`);
   $('.big-type .panel div').css('text-shadow', `
